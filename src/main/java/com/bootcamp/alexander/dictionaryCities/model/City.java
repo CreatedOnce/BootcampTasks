@@ -9,7 +9,7 @@ public class City {
     private final int population;
     private final String foundation;
 
-    City(String[] fields){
+    public City(String[] fields){
         this.name = fields[1];
         this.region = fields[2];
         this.district = fields[3];

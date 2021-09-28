@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS DictionaryCities
+(
+    id          INT GENERATED ALWAYS AS IDENTITY  PRIMARY KEY,
+    name        CHARACTER VARYING(50) NOT NULL,
+    region      CHARACTER VARYING(100) NOT NULL,
+    district    CHARACTER VARYING(100) NOT NULL ,
+    population  INT,
+    foudation   CHARACTER VARYING(30) NOT NULL
+)
