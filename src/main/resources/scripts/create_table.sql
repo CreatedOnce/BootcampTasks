@@ -6,4 +6,9 @@ CREATE TABLE IF NOT EXISTS DictionaryCities
     district    CHARACTER VARYING(100) NOT NULL ,
     population  INT,
     foudation   CHARACTER VARYING(30) NOT NULL
-)
+);
+
+CREATE SEQUENCE id_seq INCREMENT 1
+    MINVALUE 1
+    MAXVALUE 499
+    START WITH 1 CYCLE;

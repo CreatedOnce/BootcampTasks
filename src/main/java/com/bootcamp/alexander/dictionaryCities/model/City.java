@@ -1,20 +1,31 @@
 package com.bootcamp.alexander.dictionaryCities.model;
 
+import javax.persistence.*;
 import java.util.Objects;
-
+@Entity
+@Table(name="DictionaryCities")
 public class City {
-    private final String name;
-    private final String region;
-    private final String district;
-    private final int population;
-    private final String foundation;
 
+    @Id
+    @SequenceGenerator(name = "city_generator", sequenceName = "id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "city_generator")
+
+    private  String name;
+    private  String region;
+    private  String district;
+    private  int population;
+    private  String foundation;
+
+    public City(){}
     public City(String[] fields){
-        this.name = fields[1];
-        this.region = fields[2];
-        this.district = fields[3];
-        this.population = Integer.parseInt(fields[4]);
-        this.foundation = fields[5];
+        if(fields[1] != null && fields[2] != null &&
+           fields[3] != null && Integer.parseInt(fields[4]) != 0 && fields[5] != null ){
+            this.name = fields[1];
+            this.region = fields[2];
+            this.district = fields[3];
+            this.population = Integer.parseInt(fields[4]);
+            this.foundation = fields[5];
+        }
     }
 
     public String getName(){
