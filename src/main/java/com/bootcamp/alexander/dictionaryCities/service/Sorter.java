@@ -5,6 +5,10 @@ import com.bootcamp.alexander.dictionaryCities.model.City;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+* Класс Sorter.
+ * Создание корпараторов
+* */
 public class Sorter {
     private Comparator<City> comparator = Comparator.comparing(City::getName);
 

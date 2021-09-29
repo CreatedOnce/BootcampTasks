@@ -9,6 +9,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/*
+ * Считывает данные из файла и разбивает их в файл
+ * @param file - файл, содержащий информацию о городах
+ * @param cities - список для добавления городов
+ */
 public class ParserCitites {
     public static List<City> parserCity(File file, List<City> cities){
         List<City> listCities = new ArrayList<>();
