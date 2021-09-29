@@ -5,6 +5,9 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
+/**
+ * Класс создающий сессию для подключения
+ * */
 public class HibernateSessionFactory {
     private static SessionFactory sessionFactory;
 

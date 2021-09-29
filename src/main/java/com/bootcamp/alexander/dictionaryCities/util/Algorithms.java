@@ -9,6 +9,9 @@ import java.util.HashMap;
 public class Algorithms {
     private Algorithms(){}
 
+    /**
+     * Находит индекс элемента и значение с наибольшим количеством жителей города
+     */
     public static int[] findCityHighestPopulation(List<City> cities){
         if(cities.isEmpty()){
             return new int[]{0,0};

@@ -4,20 +4,29 @@ import javax.persistence.*;
 import java.util.Objects;
 @Entity
 @Table(name="DictionaryCities")
+/**
+* Класс город,который содержит информацию такую как:
+* Имя города, наименование региона в котором город находится,
+* наименование федерального коруга в котором находится,
+* количество населения, дату основания.
+* Содержащий перегрузку методов:
+* equals(), hashCode(), toString
+* */
 public class City {
 
     @Id
     @SequenceGenerator(name = "city_generator", sequenceName = "id_seq", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "city_generator")
 
-    private  String name;
-    private  String region;
-    private  String district;
-    private  int population;
-    private  String foundation;
+    private  String name;//Наименование города
+    private  String region;//Наименования региона
+    private  String district;//Федеральный округ
+    private  int population;//Количество населения в городе
+    private  String foundation;//Дата основания или первое упоминание
 
     public City(){}
     public City(String[] fields){
+        //Проверка полей
         if(fields[1] != null && fields[2] != null &&
            fields[3] != null && Integer.parseInt(fields[4]) != 0 && fields[5] != null ){
             this.name = fields[1];
@@ -27,6 +36,10 @@ public class City {
             this.foundation = fields[5];
         }
     }
+
+    /**
+     * Геттеры , сеттеры
+     */
 
     public String getName(){
         return name;
